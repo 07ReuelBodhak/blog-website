@@ -46,7 +46,22 @@ A responsive and interactive blog website showcasing articles across various cat
 ## File Structure
 
 ```
-Blog_Website/ ├── assets/ # Contains images for blogs and icons │ ├── moon.png # Icon for light theme │ ├── sun.png # Icon for dark theme │ ├── search-dark.png # Search icon for dark theme │ ├── search-light.png # Search icon for light theme │ ├── ai/ # AI blog images │ ├── food/ # Food blog images │ ├── tech/ # Technology blog images │ └── travel/ # Travel blog images ├── data.js # Contains blog data ├── index.html # Main HTML file ├── script.js # JavaScript for interactivity ├── style.css # CSS for styling └── README.md # Project documentation
+Blog_Website/
+├── assets/
+│   ├── moon.png
+│   ├── sun.png
+│   ├── search-dark.png
+│   ├── search-light.png
+│   ├── ai/
+│   ├── food/
+│   ├── tech/
+│   └── travel/
+├── data.js
+├── index.html
+├── script.js
+├── style.css
+└── README.md
+
 ```
 
 ## Technologies Used
