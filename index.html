@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+      <button id="mobile-menu-toggle">☰</button>
+      <div class="mobile-menu">
+        <hr class="mobile-menu-divider" />
+        <button id="home-button">Home</button>
+        <button id="food-button">Food</button>
+        <button id="travel-button">Travel</button>
+        <button id="technology-button">Technology</button>
+        <button id="ai-button">AI</button>
+        <div>
+          <input id="search-input" type="text" placeholder="Search" />
+          <button id="search-button"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav>
+      <ul>
+        <button id="home-desktop-button">Home</button>
+        <button id="food-desktop-button">Food</button>
+        <button id="travel-desktop-button">Travel</button>
+        <button id="technology-desktop-button">Technology</button>
+        <button id="ai-desktop-button">AI</button>
+        <div>
+          <input id="search-input" type="text" placeholder="Search" />
+          <button id="search-button"></button>
+        </div>
+      </ul>
+    </nav>
+
+    <!-- Sections -->
+    <section class="home">
+      <div class="home-title">
+        <h1>MOMENTUM</h1>
+      </div>
+      <div id="background-container"></div>
+    </section>
+
+    <section class="food">
+      <div class="selected-blog food-selected"></div>
+      <div class="blogs food-blogs"></div>
+    </section>
+
+    <section class="travel">
+      <div class="selected-blog travel-selected"></div>
+      <div class="blogs travel-blogs"></div>
+    </section>
+
+    <section class="technology">
+      <div class="selected-blog technology-selected"></div>
+      <div class="blogs tech-blogs"></div>
+    </section>
+
+    <section class="ai">
+      <div class="selected-blog ai-selected"></div>
+      <div class="blogs ai-blogs"></div>
+    </section>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-button"></button>
+
+    <script type="module" src="script.js"></script>
+    <script type="module" src="data.js"></script>
+  </body>
+</html>

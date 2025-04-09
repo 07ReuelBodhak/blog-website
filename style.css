@@ -1,0 +1,664 @@
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+/* Body */
+body {
+  padding: 0;
+  margin: 0;
+  padding: 1rem;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Light Theme (Default) */
+body.light-theme {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Dark Theme */
+body.dark-theme {
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Theme Button */
+#theme-button {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Dark Theme Button */
+body.dark-theme #theme-button {
+  background-color: #fff;
+  color: #000;
+  background-image: url(./assets/sun.png);
+}
+
+/* Light Theme Button */
+body.light-theme #theme-button {
+  background-color: #121212;
+  color: #fff;
+  background-image: url(./assets/moon.png);
+}
+
+/* Hover Effect */
+#theme-button:hover {
+  opacity: 0.8;
+}
+
+/* Mobile Navbar */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3rem;
+  z-index: 1000;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-menu-divider {
+  margin-top: 1.49rem;
+  width: 90%;
+  height: 1px;
+  background-color: #000;
+}
+
+/* Mobile Menu Toggle */
+#mobile-menu-toggle {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+}
+
+body.dark-theme #mobile-menu-toggle {
+  color: #fff;
+}
+
+body.light-theme #mobile-menu-toggle {
+  color: #000;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 250px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3rem;
+  gap: 2rem;
+  transition: left 0.4s ease-in-out;
+}
+
+.mobile-menu div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.mobile-menu div input {
+  width: 70%;
+}
+
+/* Mobile Menu Button */
+.mobile-menu button {
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.mobile-menu button:hover {
+  opacity: 0.8;
+}
+
+/* Dark Theme Mobile Menu */
+body.dark-theme .mobile-menu {
+  background: #2b2b2b;
+}
+
+/* Light Theme Mobile Menu */
+body.light-theme .mobile-menu {
+  background: rgb(31, 28, 28);
+}
+
+/* Mobile Menu Active */
+.mobile-menu.active {
+  left: 0;
+}
+
+/* Navbar */
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  padding: 0 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Navbar Links */
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+/* Navbar Button */
+nav ul button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  color: #fff;
+}
+
+/* Navbar Search */
+nav ul div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Search Input */
+#search-input {
+  padding-left: 1rem;
+  height: 2rem;
+  border-radius: 0.4rem;
+  border: none;
+  font-size: 1rem;
+}
+
+/* Search Input Focus */
+#search-input:focus {
+  outline: none;
+}
+
+/* Dark Theme Search Input */
+body.dark-theme #search-input {
+  background-color: #242424;
+  color: #fff;
+}
+
+/* Light Theme Search Input */
+body.light-theme #search-input {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Search Button */
+#search-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 1.5rem;
+  background-image: url(./assets/search-light.png);
+  height: 1.5rem;
+}
+
+/* Dark Theme Navbar */
+body.dark-theme nav {
+  background-color: #302e2e;
+}
+
+/* Light Theme Navbar */
+body.light-theme nav {
+  background-color: #242424;
+}
+
+/* Sections */
+section {
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+/* Horizontal Rule */
+hr {
+  display: none;
+  border: 1px solid #fff;
+}
+
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Home Title */
+.home-title {
+  font-size: 5rem;
+
+  z-index: 10;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Background Container */
+#background-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Background Box */
+.bg-box {
+  position: absolute;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  opacity: 0.7;
+}
+
+/* Background Box Hover */
+.bg-box:hover {
+  transform: scale(1.2);
+}
+
+/* Home Title */
+.home-title h1 {
+  font-weight: 200;
+}
+
+/* Food Section */
+.food {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.travel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.technology {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ai {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Food Blogs */
+.blogs {
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+}
+
+/* Food Blogs Scrollbar */
+.blogs::-webkit-scrollbar {
+  height: 8px;
+}
+
+/* Food Blogs Scrollbar Track */
+.blogs::-webkit-scrollbar-track {
+  background: #0e0a0a;
+}
+
+/* Food Blogs Scrollbar Thumb */
+.blogs::-webkit-scrollbar-thumb {
+  background: #fffefe;
+  border-radius: 10px;
+}
+
+body.light-theme .blogs::-webkit-scrollbar-thumb {
+  background: #000;
+}
+body.light-theme .blogs::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Slider */
+.slider {
+  display: flex;
+  gap: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+/* Blog Card */
+.blog-card {
+  width: 250px;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex-shrink: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Blog Card Hover */
+.blog-card:hover {
+  opacity: 0.8;
+}
+
+/* Blog Card Image */
+.blog-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* Blog Details */
+.blog-details {
+  padding: 10px;
+}
+
+/* Blog Details Title */
+.blog-details h3 {
+  font-size: 16px;
+  margin: 5px 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
+}
+
+/* Blog Details Date */
+.blog-details p {
+  font-size: 14px;
+  color: gray;
+}
+
+/* Selected Food Blog */
+.selected-blog {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Food Blogs Scrollbar */
+.selected-blog::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+/* Food Blogs Scrollbar Track */
+.selected-blog::-webkit-scrollbar-track {
+  background: #0e0a0a;
+}
+
+/* Food Blogs Scrollbar Thumb */
+.selected-blog::-webkit-scrollbar-thumb {
+  background: #fffefe;
+  border-radius: 10px;
+}
+
+/* Light Theme Food Blogs Scrollbar */
+body.light-theme .selected-blog::-webkit-scrollbar-thumb {
+  background: #000;
+}
+
+/* Light Theme Food Blogs Scrollbar Track */
+body.light-theme .selected-blog::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Selected Blog Card */
+.selected-blog-card img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Selected Blog Details */
+.selected-blog-details {
+  margin-top: 10px;
+}
+
+/* Selected Blog Details Title */
+.selected-blog-details h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+/* Selected Blog Details Paragraph */
+.selected-blog-details p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Dark Theme Selected Blog Details Paragraph */
+body.dark-theme .selected-blog-details p {
+  color: #fff;
+  opacity: 0.5;
+}
+
+/* Comment Title */
+.comment-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Selected Blog Comments */
+.selected-blog-comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+  gap: 1rem;
+}
+
+/* Selected Blog Comment */
+.selected-blog-comments .comment {
+  border: 1px solid #fff;
+  border-radius: 10px;
+  width: 100%;
+}
+
+/* Light Theme Selected Blog Comment */
+body.light-theme .selected-blog-comments .comment {
+  border: 1px solid #000;
+}
+
+/* Comment Form */
+.comment-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Comment Form Input */
+.comment-form input {
+  width: 100%;
+  height: 2rem;
+  border-radius: 10px;
+  border: none;
+  padding: 0 1rem;
+  border: 1px solid #000;
+}
+
+/* Comment Form Textarea */
+.comment-form textarea {
+  width: 100%;
+  height: 4rem;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+/* Comment Form Button */
+.comment-form button {
+  width: 100%;
+  height: 3rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+
+/* Dark Theme Comment Form Button */
+body.dark-theme .comment-form button {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Comment Form Button Hover */
+.comment-form button:hover {
+  opacity: 0.8;
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+  .mobile-nav {
+    display: flex;
+  }
+  hr {
+    display: block;
+  }
+
+  .home-title h1 {
+    font-size: 3.5rem;
+  }
+
+  .selected-blog-card {
+    max-width: 400px;
+  }
+
+  .selected-blog-card img {
+    max-height: 200px;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-nav {
+    display: none;
+  }
+
+  .home-title h1 {
+    font-size: 10rem;
+  }
+
+  nav {
+    display: flex;
+  }
+
+  .food {
+    flex-direction: row;
+  }
+  .travel {
+    flex-direction: row;
+  }
+  .technology {
+    flex-direction: row;
+  }
+  .ai {
+    flex-direction: row;
+  }
+
+  .blogs {
+    height: 80%;
+    margin-top: 3rem;
+  }
+
+  .blogs::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+  }
+
+  .slider {
+    flex-direction: column;
+  }
+
+  .blog-card {
+    width: 100%;
+    display: flex;
+  }
+
+  .blog-card img {
+    height: 200px;
+    width: 50%;
+  }
+
+  .selected-blog {
+    height: 80%;
+    margin-top: 5rem;
+  }
+}
+
+@keyframes changeBackground {
+  0% {
+    background-image: url("https://source.unsplash.com/random/1920x1080?nature");
+  }
+  50% {
+    background-image: url("https://source.unsplash.com/random/1920x1080?technology");
+  }
+  100% {
+    background-image: url("https://source.unsplash.com/random/1920x1080?city");
+  }
+}
