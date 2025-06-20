@@ -46,20 +46,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // Smooth Scrolling for Navigation
   const sections = ["home", "food", "travel", "technology", "ai"];
   sections.forEach((section) => {
+    const scrollToSection = () => {
+      document
+        .querySelector(`.${section}`)
+        .scrollIntoView({ behavior: "smooth" });
+      document.querySelector(".mobile-menu").classList.remove("active");
+    };
+
     document
       .querySelector(`#${section}-button`)
-      .addEventListener("click", () => {
-        document
-          .querySelector(`.${section}`)
-          .scrollIntoView({ behavior: "smooth" });
-      });
+      ?.addEventListener("click", scrollToSection);
     document
       .querySelector(`#${section}-desktop-button`)
-      .addEventListener("click", () => {
-        document
-          .querySelector(`.${section}`)
-          .scrollIntoView({ behavior: "smooth" });
-      });
+      ?.addEventListener("click", scrollToSection);
   });
 
   const selectedBlogContainers = {
